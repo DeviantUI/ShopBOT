@@ -2,7 +2,7 @@
 import redis
 import os
 import telebot
-from telebot import types
+#from telebot import types
 # import some_api_lib
 # import ...
 
