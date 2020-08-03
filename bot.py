@@ -1,17 +1,22 @@
-#! /usr/bin/env python
 # -*- coding: utf-8 -*-
-
-import random
+import redis
+import os
 import telebot
 from telebot import types
-#Токен бота из @BotFather
+# import some_api_lib
+# import ...
+
+# Example of your code beginning
+#           Config vars
+token = os.environ['TELEGRAM_TOKEN']
+some_api_token = os.environ['SOME_API_TOKEN']
 #Информация
 name = 'STICK17 | Shop'
 welcome_message = 'STICK 17 выпустили первую линейку футболок с героями фирменных стикерпаков. Коллекция состоит из эмоций, которые ежедневно испытывает каждый из нас. Высокое качество. Ограниченный тираж. Бесплатная доставка на территории РФ.'
 information = 'г. Барнаул\nпр-т Социалистический, 34\nофис 302\nstick17@lenta.ru\n+79833589069\nwww.stick17.ru'
 contact= '@stick17_shop_bot'
 #Дальше в код лезть не советую
-
+#             ...
 img = 'img/logo.jpg'
 
 @bot.message_handler(commands=['start'])
@@ -59,3 +64,12 @@ def sticker_id(message):
     print(message)
 
 bot.polling(none_stop=True, interval=0)
+
+
+# If you use redis, install this add-on https://elements.heroku.com/addons/heroku-redis
+r = redis.from_url(os.environ.get("REDIS_URL"))
+
+#       Your bot code below
+# bot = telebot.TeleBot(token)
+# some_api = some_api_lib.connect(some_api_token)
+#              ...
