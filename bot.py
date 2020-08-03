@@ -21,9 +21,9 @@ img = 'img/logo.jpg'
 
 @bot.message_handler(commands=['start'])
 def start_message(message):
-    l = open('log.txt', 'a', encoding="utf-8")
-    l.write('id : ' + str(message.from_user.id) + '\nusername : ' + str(message.from_user.username) + '\nlanguage_code : ' + str(message.from_user.language_code) + '\n\n')
-    l.close()
+    #l = open('log.txt', 'a', encoding="utf-8")
+    #l.write('id : ' + str(message.from_user.id) + '\nusername : ' + str(message.from_user.username) + '\nlanguage_code : ' + str(message.from_user.language_code) + '\n\n')
+    #l.close()
     bot.send_photo(message.chat.id, open(img, 'rb'), welcome_message, reply_markup=keyboard)
 
 keyboard = telebot.types.ReplyKeyboardMarkup(True)
@@ -35,9 +35,9 @@ keyboard2.row('Футболки')
 @bot.message_handler(content_types=['text'])
 def get_text_messages(message):
     ###log
-    l = open('log.txt', 'a', encoding="utf-8")
-    l.write('id : ' + str(message.from_user.id) + '\nusername : ' + str(message.from_user.username) + '\nlanguage_code : ' + str(message.from_user.language_code) + '\ntext : ' + str(message.text) + '\n\n')
-    l.close()
+    #l = open('log.txt', 'a', encoding="utf-8")
+    #l.write('id : ' + str(message.from_user.id) + '\nusername : ' + str(message.from_user.username) + '\nlanguage_code : ' + str(message.from_user.language_code) + '\ntext : ' + str(message.text) + '\n\n')
+    #l.close()
     ###
     if message.text == "Витрина":
         bot.send_photo(message.from_user.id, open(img, 'rb'), name + '\n' + information)
