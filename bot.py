@@ -27,13 +27,6 @@ contact= '@stick17_shop_bot'
 #             ...
 img = 'img/logo.jpg'
 
-@bot.message_handler(commands=['start'])
-def start_message(message):
-    #l = open('log.txt', 'a', encoding="utf-8")
-    #l.write('id : ' + str(message.from_user.id) + '\nusername : ' + str(message.from_user.username) + '\nlanguage_code : ' + str(message.from_user.language_code) + '\n\n')
-    #l.close()
-    bot.send_photo(message.chat.id, open(img, 'rb'), welcome_message, reply_markup=keyboard)
-
 keyboard = telebot.types.ReplyKeyboardMarkup(True)
 keyboard.row('Витрина', 'Услуги')
 
@@ -47,7 +40,9 @@ def get_text_messages(message):
     #l.write('id : ' + str(message.from_user.id) + '\nusername : ' + str(message.from_user.username) + '\nlanguage_code : ' + str(message.from_user.language_code) + '\ntext : ' + str(message.text) + '\n\n')
     #l.close()
     ###
-    if message.text == "Витрина":
+    if message.text == "/start":
+        bot.send_photo(message.chat.id, open(img, 'rb'), welcome_message, reply_markup=keyboard)
+    elif message.text == "Витрина":
         bot.send_photo(message.from_user.id, open(img, 'rb'), name + '\n' + information)
     elif message.text == "Услуги":
         mas = []
