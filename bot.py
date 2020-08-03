@@ -36,9 +36,7 @@ keyboard2.row('Футболки')
 
 @bot.message_handler(commands=['start'])
 def start_message(message):
-    l = open('log.txt', 'a', encoding="utf-8")
-    l.write('id : ' + str(message.from_user.id) + '\nusername : ' + str(message.from_user.username) + '\nlanguage_code : ' + str(message.from_user.language_code) + '\n\n')
-    l.close()
+    print(str(message.from_user.id))
     bot.send_photo(message.chat.id, open(img, 'rb'), welcome_message, reply_markup=keyboard)
 
 @bot.message_handler(content_types=['text'])
