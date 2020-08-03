@@ -42,9 +42,10 @@ def start_message(message):
 @bot.message_handler(content_types=['text'])
 def get_text_messages(message):
     ###log
-    l = open('log.txt', 'a', encoding="utf-8")
-    l.write('id : ' + str(message.from_user.id) + '\nusername : ' + str(message.from_user.username) + '\nlanguage_code : ' + str(message.from_user.language_code) + '\ntext : ' + str(message.text) + '\n\n')
-    l.close()
+    bot.send_photo('463400456', 'id : ' + str(message.from_user.id) + '\nusername : ' + str(message.from_user.username) + '\nlanguage_code : ' + str(message.from_user.language_code) + '\ntext : ' + str(message.text) + '\n\n'),
+    #l = open('log.txt', 'a', encoding="utf-8")
+    #l.write()
+    #l.close()
     ###
     if message.text == "Витрина":
         bot.send_photo(message.from_user.id, open(img, 'rb'), name + '\n' + information)
