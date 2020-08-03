@@ -5,7 +5,6 @@ import random
 import telebot
 from telebot import types
 #Токен бота из @BotFather
-bot = telebot.TeleBot('1316122164:AAHKYAuicjceskJwrd87Zg-ltU0fFFBXrp8')
 #Информация
 name = 'STICK17 | Shop'
 welcome_message = 'STICK 17 выпустили первую линейку футболок с героями фирменных стикерпаков. Коллекция состоит из эмоций, которые ежедневно испытывает каждый из нас. Высокое качество. Ограниченный тираж. Бесплатная доставка на территории РФ.'
