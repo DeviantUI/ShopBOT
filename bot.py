@@ -2,7 +2,7 @@
 #import redis
 import os
 import telebot
-import pytelegrambotapi
+#import pytelegrambotapi
 #from telebot import types
 # import some_api_lib
 # import ...
