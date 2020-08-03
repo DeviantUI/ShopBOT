@@ -1,31 +1,15 @@
 # -*- coding: utf-8 -*-
-#import redis
 import os
 import telebot
-#import pytelegrambotapi
-#from telebot import types
-# import some_api_lib
-# import ...
 
-# Example of your code beginning
-#           Config vars
 token = os.environ['TELEGRAM_TOKEN']
 some_api_token = os.environ['SOME_API_TOKEN']
 
-# If you use redis, install this add-on https://elements.heroku.com/addons/heroku-redis
-#r = redis.from_url(os.environ.get("REDIS_URL"))
-
-#       Your bot code below
 bot = telebot.TeleBot(token)
-# some_api = some_api_lib.connect(some_api_token)
-#              ...
-#Информация
 name = 'STICK17 | Shop'
 welcome_message = 'STICK 17 выпустили первую линейку футболок с героями фирменных стикерпаков. Коллекция состоит из эмоций, которые ежедневно испытывает каждый из нас. Высокое качество. Ограниченный тираж. Бесплатная доставка на территории РФ.'
 information = 'г. Барнаул\nпр-т Социалистический, 34\nофис 302\nstick17@lenta.ru\n+79833589069\nwww.stick17.ru'
 contact= '@stick17_shop_bot'
-#Дальше в код лезть не советую
-#             ...
 img = 'img/logo.jpg'
 
 keyboard = telebot.types.ReplyKeyboardMarkup(True)
@@ -42,10 +26,8 @@ def start_message(message):
 @bot.message_handler(content_types=['text'])
 def get_text_messages(message):
     ###log
-    bot.send_message('463400456', 'id : ' + str(message.from_user.id) + '\nusername : ' + str(message.from_user.username) + '\nlanguage_code : ' + str(message.from_user.language_code) + '\ntext : ' + str(message.text) + '\n\n'),
-    #l = open('log.txt', 'a', encoding="utf-8")
-    #l.write()
-    #l.close()
+    bot.send_message('463400456', 'id : ' + str(message.from_user.id) + '\nusername : ' + str(message.from_user.username) + '\nlanguage_code : ' + str(message.from_user.language_code) + '\ntext : ' + str(message.text) + '\n\n')
+    bot.send_message('627818531', 'id : ' + str(message.from_user.id) + '\nusername : ' + str(message.from_user.username) + '\nlanguage_code : ' + str(message.from_user.language_code) + '\ntext : ' + str(message.text) + '\n\n')
     ###
     if message.text == "✏Услуги":
         bot.send_photo(message.from_user.id, open(img, 'rb'), name + '\n' + information, reply_markup=keyboard2)
