@@ -47,9 +47,9 @@ def get_text_messages(message):
     #l.write()
     #l.close()
     ###
-    if message.text == "Витрина":
+    if message.text == "Услуги":
         bot.send_photo(message.from_user.id, open(img, 'rb'), name + '\n' + information)
-    elif message.text == "Услуги":
+    elif message.text == "Витрина":
         mas = []
         f = open('BD.txt', "r", encoding="utf-8")
         n  = int(f.readline())
